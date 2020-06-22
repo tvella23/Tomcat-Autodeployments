@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+#############################################################################
+This file is used by the maven file:deploy-file goal. Please ensure that
+you have set the correct settings to the artefact repository. This includes
+specifying the correct repostory name, user id, password and URL to the the 
+repository.
+#############################################################################
+-->
+
+<settings>
+      <interactiveMode>true</interactiveMode>
+      <servers>
+    	<server>
+              <id>release-candidates</id>
+              <username>erp-tester</username>
+              <password>password</password>
+        </server>
+      </servers>
+      <profiles>
+       <profile>
+                  <id>proxy</id>
+                  <activation>
+                              	<activeByDefault>true</activeByDefault>
+                         </activation>
+                         <repositories>
+                                <repository>
+                                          <id>release-candidates</id>
+                                              <url>http://172.31.17.192:8081/nexus/content/repositories/release-candidates</url>
+                                              <releases>
+                                          <enabled>true</enabled>
+                                          </releases>
+                                          <snapshots>
+                                                <enabled>false</enabled>
+                                         </snapshots>
+                                </repository>
+                        </repositories>
+            </profile>
+
+      </profiles>
+
+</settings>
